@@ -13,8 +13,6 @@ import { PostListComponent } from './post/post-list/post-list.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 import { PostEditModalComponent } from './post/post-edit-modal/post-edit-modal.component';
 import { ToastrModule } from 'ngx-toastr';
-import { UserListComponent } from './user/user-list/user-list.component';
-import { UserAddModalComponent } from './user/user-add-modal/user-add-modal.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { LatestCommentsComponent } from './shared/components/latest-comments/latest-comments.component';
@@ -30,8 +28,6 @@ const toastrConfig = {
     PostListComponent,
     PostDetailsComponent,
     PostEditModalComponent,
-    UserListComponent,
-    UserAddModalComponent,
     HeaderComponent,
     FooterComponent,
     LatestCommentsComponent,
@@ -48,7 +44,7 @@ const toastrConfig = {
     BrowserAnimationsModule
   ],
   providers: [],
-  entryComponents: [PostEditModalComponent, UserAddModalComponent],
+  entryComponents: [PostEditModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

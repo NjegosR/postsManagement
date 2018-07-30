@@ -19,7 +19,4 @@ export class UserService {
   getUserById(userId) {
     return this.http.get<User>(this.usersUrl + '/' + userId);
   }
-  createUser(body) {
-    return this.http.post(this.usersUrl, body);
-  }
 }
