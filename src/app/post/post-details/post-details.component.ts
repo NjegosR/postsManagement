@@ -17,14 +17,18 @@ import { Observable, pipe } from 'rxjs';
   styleUrls: ['./post-details.component.scss']
 })
 export class PostDetailsComponent implements OnInit {
+
+  title = 'Comments for this post';
+  titleAllComments = 'Comments';
+
   postId: number;
   userId: number;
+
   post$: Observable<Post>;
   user$: Observable<User>;
   comments$: Observable<Comment[]>;
   commentsAll$: Observable<Comment[]>;
-  title = 'Comments for this post';
-  titleAllComments = 'Comments';
+
 
   constructor(
     private router: Router,
@@ -39,6 +43,7 @@ export class PostDetailsComponent implements OnInit {
   ngOnInit() {
     this.postId = this.activatedRouter.snapshot.params['id'];
     this.userId = this.activatedRouter.snapshot.params['userId'];
+
     this.post$ = this.postService.getPostById(this.postId);
     this.user$ = this.userService.getUserById(this.userId);
     this.comments$ = this.commentsService.getCommentsForPost(this.postId);

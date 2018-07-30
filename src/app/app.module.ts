@@ -13,10 +13,8 @@ import { PostListComponent } from './post/post-list/post-list.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 import { PostEditModalComponent } from './post/post-edit-modal/post-edit-modal.component';
 import { ToastrModule } from 'ngx-toastr';
-import { HeaderComponent } from './shared/components/header/header.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
-import { LatestCommentsComponent } from './shared/components/latest-comments/latest-comments.component';
 import { PostAddComponent } from './post/post-add/post-add.component';
+import { SharedModule } from './shared/shared.module';
 
 const toastrConfig = {
   timeOut: 2000
@@ -28,9 +26,6 @@ const toastrConfig = {
     PostListComponent,
     PostDetailsComponent,
     PostEditModalComponent,
-    HeaderComponent,
-    FooterComponent,
-    LatestCommentsComponent,
     PostAddComponent
   ],
   imports: [
@@ -41,7 +36,8 @@ const toastrConfig = {
     NgbModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot(toastrConfig),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [],
   entryComponents: [PostEditModalComponent],

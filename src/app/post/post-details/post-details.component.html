@@ -35,7 +35,6 @@
           </div>
         </div>
         <div class="col">
-          {{comments$ | async | json}}
           <app-latest-comments [title]="title" [comments]="comments$ | async"></app-latest-comments>
         </div>
         </div>
