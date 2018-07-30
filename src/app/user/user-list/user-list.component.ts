@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from '../shared/user.service';
-import { User } from '../shared/user.model';
+import { UserService } from '../../shared/services/user.service';
+import { User } from '../../shared/services/user.model';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserAddModalComponent } from '../user-add-modal/user-add-modal.component';
 

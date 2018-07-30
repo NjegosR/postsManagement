@@ -1,12 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
@@ -17,6 +18,7 @@ import { UserAddModalComponent } from './user/user-add-modal/user-add-modal.comp
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { LatestCommentsComponent } from './shared/components/latest-comments/latest-comments.component';
+import { PostAddComponent } from './post/post-add/post-add.component';
 
 const toastrConfig = {
   timeOut: 2000
@@ -32,7 +34,8 @@ const toastrConfig = {
     UserAddModalComponent,
     HeaderComponent,
     FooterComponent,
-    LatestCommentsComponent
+    LatestCommentsComponent,
+    PostAddComponent
   ],
   imports: [
     BrowserModule,

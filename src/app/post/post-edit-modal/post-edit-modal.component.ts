@@ -5,6 +5,7 @@ import { Post } from '../../shared/services/post.model';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../../shared/services/post.service';
 import { AlertService } from '../../shared/services/alert.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-post-edit-modal',
@@ -25,7 +26,7 @@ export class PostEditModalComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.createPostForm();
+    this.postForm = new FormGroup({ post: new FormControl(this.body)});
   }
   updatePost(form) {
     this.postService.updatePost(this.postId, form.value)
@@ -39,10 +40,4 @@ export class PostEditModalComponent implements OnInit {
     }
   );
   }
-  private createPostForm() {
-    this.postForm = new FormGroup({
-      post: new FormControl(this.body)
-    });
-  }
-
 }

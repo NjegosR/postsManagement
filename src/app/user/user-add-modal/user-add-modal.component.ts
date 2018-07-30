@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { User } from '../shared/user.model';
-import { UserService } from '../shared/user.service';
+import { User } from '../../shared/services/user.model';
+import { UserService } from '../../shared/services/user.service';
 import { AlertService } from '../../shared/services/alert.service';
 import { Alert } from 'selenium-webdriver';
 
@@ -17,21 +17,21 @@ export class UserAddModalComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private _userService: UserService,
-    private _alert: AlertService
+    private userService: UserService,
+    private alert: AlertService
   ) { }
 
   ngOnInit() {
     this.createAddUserForm();
   }
   addUser(form) {
-    this._userService.createUser(form.value)
+    this.userService.createUser(form.value)
       .subscribe(result => {
-        this._alert.success('User created!');
+        this.alert.success('User created!');
         this.activeModal.close();
       },
       (error) => {
-        this._alert.error('Unexpected server error');
+        this.alert.error('Unexpected server error');
       });
   }
   private createAddUserForm() {
