@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Post } from '../../shared/services/post.model';
+import { Post } from '../../shared/models/post.model';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../../shared/services/post.service';
 import { AlertService } from '../../shared/services/alert.service';

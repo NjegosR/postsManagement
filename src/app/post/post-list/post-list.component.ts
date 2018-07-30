@@ -1,14 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { PostService } from '../../shared/services/post.service';
 import { CommentsService } from '../../shared/services/comments.service';
-import { Comment } from '../../shared/services/comment.model';
-import { Post } from '../../shared/services/post.model';
+import { Comment } from '../../shared/models/comment.model';
+import { Post } from '../../shared/models/post.model';
 
 import { Observable } from 'rxjs';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.Default,
   selector: 'app-post-list',
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss']

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
-import { Post } from '../../shared/services/post.model';
+import { Post } from '../../shared/models/post.model';
 import { PostService } from '../../shared/services/post.service';
 import { AlertService } from '../../shared/services/alert.service';
 
