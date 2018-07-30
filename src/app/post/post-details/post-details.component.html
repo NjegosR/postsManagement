@@ -1,4 +1,5 @@
-<div class="container">
+<app-header></app-header>
+<div class="container mt-md-3">
   <div class="row">
     <div class="col-9">
       <div class="myBox">
@@ -7,18 +8,18 @@
           <div class="row box">
             <div class="col">
               <h1>User Details</h1>
-              <p>
-                <strong>Name:</strong> {{user?.name}}
-              </p>
-              <p>
-                <strong>Username:</strong> {{user?.username}}
-              </p>
-              <p>
-                <strong>Email:</strong> {{user?.email}}
-              </p>
-              <p>
-                <strong>City:</strong> {{user?.address.city}}
-              </p>
+                <p>
+                  <strong>Name:</strong> {{(user$ | async)?.name}}
+                </p>
+                <p>
+                  <strong>Username:</strong> {{(user$ | async)?.username }}
+                </p>
+                <p>
+                  <strong>Email:</strong> {{(user$ | async)?.email}}
+                </p>
+                <p>
+                  <strong>City:</strong> {{(user$ | async)?.address.city}}
+                </p>
             </div>
 
           </div>
@@ -26,22 +27,23 @@
             <div class="col">
               <h1>Post Details</h1>
               <p>
-                <strong>Title:</strong> {{post?.title}} </p>
+                <strong>Title:</strong> {{(post$ | async)?.title}} </p>
               <p>
-                <strong>Body:</strong> {{post?.body}} </p>
+                <strong>Body:</strong> {{(post$ | async)?.body}} </p>
             </div>
 
           </div>
         </div>
         <div class="col">
-          <app-comments-list [title]="title" [comments]="comments"></app-comments-list>
+          <app-latest-comments [title]="title" [comments$]="comments$"></app-latest-comments>
         </div>
         </div>
       </div>
       <button class="btn btn-lg btn-outline-primary mt-md-3 float-right" (click)="editPost()">Edit Post</button>
     </div>
     <div class="col-3">
-      <app-comments-list [title]="titleAllComments" [comments]="commentsAll"></app-comments-list>
+      <app-latest-comments [title]="titleAllComments" [comments$]="commentsAll$"></app-latest-comments>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

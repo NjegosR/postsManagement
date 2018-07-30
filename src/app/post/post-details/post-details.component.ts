@@ -19,8 +19,8 @@ import { Observable } from 'rxjs';
 export class PostDetailsComponent implements OnInit {
   postId: number;
   userId: number;
-  post: Post;
-  user: User;
+  post$: Observable<Post>;
+  user$: Observable<User>;
   comments$: Observable<Comment[]>;
   commentsAll$: Observable<Comment[]>;
   title = 'Comments for this post';
@@ -35,29 +35,17 @@ export class PostDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getPostById();
-    this.getUserById();
-    this.getCommentsForPost();
-    this.getAllComments();
-  }
-
-  private getPostById() {
     this.postId = this.activatedRouter.snapshot.params['id'];
     this.userId = this.activatedRouter.snapshot.params['userId'];
-    this.postService.getPostById(this.postId).subscribe(result => this.post = result);
-  }
-  private getUserById() {
-    this.userService.getUserById(this.userId).subscribe(result => this.user = result);
-  }
-  private getCommentsForPost() {
+    this.post$ = this.postService.getPostById(this.postId);
+    this.user$ = this.userService.getUserById(this.userId);
     this.comments$ = this.commentsService.getCommentsForPost(this.postId);
-  }
-  private getAllComments() {
     this.commentsAll$ = this.commentsService.getAllComments();
+
   }
   editPost() {
     const modal = this.modal.open(PostEditModalComponent);
-    modal.componentInstance.body = this.post.body;
+    modal.componentInstance.body = this.post$;
     modal.componentInstance.postId = this.postId;
   }
 

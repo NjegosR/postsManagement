@@ -33,6 +33,10 @@ const routes: Routes = [
     path: '',
     component: PostListComponent,
     pathMatch: 'full'
+  },
+  {
+    path: 'posts/:id/:userId',
+    component: PostDetailsComponent
   }
 ];
 

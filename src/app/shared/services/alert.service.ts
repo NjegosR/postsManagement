@@ -7,13 +7,13 @@ import { ToastrService } from 'ngx-toastr';
 export class AlertService {
 
   constructor(
-    public _toastrService: ToastrService
+    public toastrService: ToastrService
   ) { }
 
   success(message, title?) {
-    return this._toastrService.success(message, title);
+    return this.toastrService.success(message, title);
   }
   error(message, title?) {
-    return this._toastrService.error(message, title);
+    return this.toastrService.error(message, title);
 }
 }

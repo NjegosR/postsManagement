@@ -1,10 +1,10 @@
-<div id="comments">
+<div class="myContainer">
   <div class="card">
     <div class="cardhead">
       <h4 class="text-center"> {{title}} </h4>
     </div>
   </div>
-  <div *ngFor="let comment of comments">
+  <div *ngFor="let comment of comments$ | async">
     <div class="card">
       <div class="card-header">
         {{ comment?.name }}

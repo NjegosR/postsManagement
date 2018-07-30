@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Comment } from '../../services/comment.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-latest-comments',
@@ -8,7 +9,7 @@ import { Comment } from '../../services/comment.model';
 })
 export class LatestCommentsComponent implements OnInit {
   @Input() title: string;
-  @Input() comments: Comment[];
+  @Input() comments$: Observable<Comment[]>;
 
   constructor() { }
 

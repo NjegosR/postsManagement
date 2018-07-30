@@ -18,9 +18,9 @@ export class PostEditModalComponent implements OnInit {
 
   constructor(
     public activeModal: NgbActiveModal,
-    private _activatedRouter: ActivatedRoute,
-    private _postService: PostService,
-    private _alertService: AlertService
+    private activatedRouter: ActivatedRoute,
+    private postService: PostService,
+    private alertService: AlertService
   ) {
    }
 
@@ -28,13 +28,13 @@ export class PostEditModalComponent implements OnInit {
     this.createPostForm();
   }
   updatePost(form) {
-    this._postService.updatePost(this.postId, form.value)
+    this.postService.updatePost(this.postId, form.value)
     .subscribe(result => {
-      this._alertService.success('Post updated!');
+      this.alertService.success('Post updated!');
       this.activeModal.close();
     },
     (error) => {
-      this._alertService.error('Unexpected server error');
+      this.alertService.error('Unexpected server error');
       this.activeModal.close();
     }
   );

@@ -1,4 +1,5 @@
 <app-header></app-header>
+<div class="container mt-md-3">
 <div class="row">
   <div class="col-lg-8">
     <div id="table">
@@ -23,7 +24,7 @@
                   <td> {{ post.title }} </td>
                   <td> {{ (post.body | slice:0:70) }}... </td>
                   <td>
-                    <a class="btn btn-default btn-sm" (click)="moreDetailsPage(post)">
+                    <a class="btn btn-default btn-sm" [routerLink]="['posts/', post.id, post.userId]">
                       <i class="fa fa-info"></i>
                     </a>
                   </td>
@@ -36,7 +37,8 @@
     </div>
   </div>
   <div class="col-lg-4">
-    <!-- <app-comments-list [title]="title" [comments]="comments$"></app-comments-list> -->
+    <app-latest-comments [title]="title" [comments$]="comments$"></app-latest-comments>
   </div>
+</div>
 </div>
 <app-footer></app-footer>

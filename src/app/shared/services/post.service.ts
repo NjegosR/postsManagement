@@ -11,17 +11,17 @@ export class PostService {
   postsUrl = environment.API_URL + '/posts';
 
   constructor(
-    private _http: HttpClient
+    private http: HttpClient
   ) { }
 
 
   getAllPosts(): Observable<Post[]> {
-    return this._http.get<Post[]>(this.postsUrl);
+    return this.http.get<Post[]>(this.postsUrl);
   }
   getPostById(postId) {
-    return this._http.get<Post>(this.postsUrl + '/' + postId);
+    return this.http.get<Post>(this.postsUrl + '/' + postId);
   }
   updatePost(id, body) {
-    return this._http.post(this.postsUrl, body);
+    return this.http.post(this.postsUrl, body);
   }
 }
