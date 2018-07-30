@@ -24,4 +24,7 @@ export class PostService {
   updatePost(id, body) {
     return this.http.post(this.postsUrl, body);
   }
+  createPost(body) {
+    return this.http.post(this.postsUrl, body);
+  }
 }

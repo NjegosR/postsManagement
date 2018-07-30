@@ -10,16 +10,16 @@ export class UserService {
   usersUrl = environment.API_URL + '/users';
 
   constructor(
-    private _http: HttpClient
+    private http: HttpClient
   ) { }
 
   getAllUsers() {
-    return this._http.get<User[]>(this.usersUrl);
+    return this.http.get<User[]>(this.usersUrl);
   }
   getUserById(userId) {
-    return this._http.get<User>(this.usersUrl + '/' + userId);
+    return this.http.get<User>(this.usersUrl + '/' + userId);
   }
   createUser(body) {
-    return this._http.post(this.usersUrl, body);
+    return this.http.post(this.usersUrl, body);
   }
 }

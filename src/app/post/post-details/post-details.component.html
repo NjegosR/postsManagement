@@ -40,7 +40,7 @@
         </div>
       </div>
       <button class="btn btn-lg btn-outline-primary mt-md-3 float-right" (click)="editPost()">Edit Post</button>
-      <button class="btn btn-lg btn-outline-primary mt-md-3 mr-md-3 float-right" routerLink = "['posts/add']">Add Post</button>
+      <button class="btn btn-lg btn-outline-primary mt-md-3 mr-md-3 float-right" (click)="navigate()">Add Post</button>
     </div>
     <div class="col-3">
       <app-latest-comments [title]="titleAllComments" [comments$]="commentsAll$"></app-latest-comments>

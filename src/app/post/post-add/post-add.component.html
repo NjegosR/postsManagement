@@ -1,3 +1,17 @@
-<p>
-  post-add works!
-</p>
+<app-header></app-header>
+<div class="container">
+    <form [formGroup]="addPostForm">
+        <div class="row">
+          <div class="form-group col-12">
+              <label><strong>Title:</strong></label>
+              <input type="text" class="form-control" formControlName="title">
+          </div>
+          <div class="form-group col-12">
+              <label><strong>Body:</strong></label>
+              <textarea class="form-control" formControlName="body"></textarea>
+          </div>
+        </div>
+        <input type="submit" class="btn btn-outline-primary float-right" value="Submit" (click)="addPost(addPostForm)">
+      </form>
+</div>
+<app-footer></app-footer>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../../shared/services/post.model';
 import { PostService } from '../../shared/services/post.service';
 import { Comment } from '../../shared/services/comment.model';
@@ -27,6 +27,7 @@ export class PostDetailsComponent implements OnInit {
   titleAllComments = 'Comments';
 
   constructor(
+    private router: Router,
     private activatedRouter: ActivatedRoute,
     private postService: PostService,
     private commentsService: CommentsService,
@@ -47,6 +48,10 @@ export class PostDetailsComponent implements OnInit {
     const modal = this.modal.open(PostEditModalComponent);
     modal.componentInstance.body = this.post$;
     modal.componentInstance.postId = this.postId;
+  }
+
+  navigate() {
+    this.router.navigateByUrl('posts/add');
   }
 
 }
