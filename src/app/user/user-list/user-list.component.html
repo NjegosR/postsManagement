@@ -1,0 +1,36 @@
+<div class="myContainer">
+  <div class="row">
+    <div class="col">
+      <div id="table">
+        <div class="card">
+          <div class="card-block">
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered table-condensed">
+                <thead>
+                  <tr>
+                    <td colspan="3">
+                      <h4 class="float-left">Users</h4>
+                      <button class="btn btn-outline-primary float-right" (click)="addUser()">Add User</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let user of users">
+                    <td> {{ user.name}} </td>
+                    <td> {{ user.username }} </td>
+                    <td> {{user.email}} </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

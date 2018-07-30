@@ -1,0 +1,17 @@
+<div id="comments">
+  <div class="card">
+    <div class="cardhead">
+      <h4 class="text-center"> {{title}} </h4>
+    </div>
+  </div>
+  <div *ngFor="let comment of comments">
+    <div class="card">
+      <div class="card-header">
+        {{ comment?.name }}
+      </div>
+      <div class="card-body">
+        {{ comment?.body }}
+      </div>
+    </div>
+  </div>
+</div>
