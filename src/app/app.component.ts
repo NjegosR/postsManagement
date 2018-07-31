@@ -10,10 +10,11 @@ import {Comment} from './shared/models/comment.model';
 })
 export class AppComponent implements OnInit {
   title: string;
-  comments$: Observable<Comment[]>;
+   comments$: Observable<Comment[]>;
 
+  constructor(private commentService: CommentsService) {
+  }
   ngOnInit() {
     this.comments$ = this.commentService.getAllComments();
   }
-  constructor(private commentService: CommentsService) {}
-}
+  }
