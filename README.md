@@ -2,17 +2,17 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
-## Install / Development
+# Install / Development
 
 git clone https://github.com/NjegosR/postsManagement.git
 
-# Install dependencies
+## Install dependencies
 npm install
 
-# start server
+## start server
 ng serve
 
-# Client url: http://localhost:4200
+## Client url: http://localhost:4200
 
 The app will automatically reload if you change any of the source files.
 
