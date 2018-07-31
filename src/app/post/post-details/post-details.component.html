@@ -1,4 +1,3 @@
-<app-header title="PostsManagement" subtitle="Posts"></app-header>
 <div class="container mt-md-3">
   <div class="row">
     <div class="col-9">
@@ -24,7 +23,7 @@
 
           </div>
           <div class="row box">
-            <div class="col">
+            <div class="col-4">
               <h1>Post Details</h1>
               <p>
                 <strong>Title:</strong> {{(post$ | async)?.title}} </p>
@@ -35,16 +34,12 @@
           </div>
         </div>
         <div class="col">
-          <app-latest-comments [title]="title" [comments]="comments$ | async"></app-latest-comments>
+          <app-latest-comments title="Comments for this post" [comments]="comments$ | async"></app-latest-comments>
         </div>
         </div>
       </div>
-      <button  class="btn btn-lg btn-outline-primary mt-md-3 float-right" (click)="editPost(p.innerText)">Edit Post</button>
+      <button  class="btn btn-lg btn-outline-primary mt-md-3 float-right" (click)="editPost()">Edit Post</button>
       <button class="btn btn-lg btn-outline-primary mt-md-3 mr-md-3 float-right" (click)="navigate()">Add Post</button>
-    </div>
-    <div class="col-3">
-      <app-latest-comments [title]="titleAllComments" [comments]="commentsAll$  | async"></app-latest-comments>
     </div>
   </div>
 </div>
-<app-footer title="PostsManagement" [subtitle]="'Posts'"></app-footer>

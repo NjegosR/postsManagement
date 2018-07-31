@@ -12,9 +12,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
-import { PostEditModalComponent } from './post/post-edit-modal/post-edit-modal.component';
 import { PostAddComponent } from './post/post-add/post-add.component';
 import { SharedModule } from './shared/shared.module';
+import { EditPostComponent } from './post/edit-post/edit-post.component';
+import { PostListItemComponent } from './post/post-list-item/post-list-item.component';
 
 const toastrConfig = {
   timeOut: 2000
@@ -25,8 +26,9 @@ const toastrConfig = {
     AppComponent,
     PostListComponent,
     PostDetailsComponent,
-    PostEditModalComponent,
-    PostAddComponent
+    PostAddComponent,
+    EditPostComponent,
+    PostListItemComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,6 @@ const toastrConfig = {
     SharedModule
   ],
   providers: [],
-  // entryComponents: [PostEditModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
