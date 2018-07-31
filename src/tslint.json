@@ -8,10 +8,13 @@
             "camelCase"
         ],
         "component-selector": [
-            true,
-            "element",
-            "app",
-            "kebab-case"
+//            true,
+//            "element",
+//            "app",
+//            "kebab-case"
+          "attribute",
+          "myPrefix",
+          "camelCase"
         ]
     }
 }
