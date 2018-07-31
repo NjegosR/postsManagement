@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -37,7 +38,8 @@ const toastrConfig = {
     NgbModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot(toastrConfig),
-    SharedModule
+    SharedModule,
+    NoopAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
