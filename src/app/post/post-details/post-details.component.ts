@@ -7,7 +7,6 @@ import { CommentsService } from '../../shared/services/comments.service';
 import { User } from '../../shared/models/user.model';
 import { UserService } from '../../shared/services/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { PostEditModalComponent } from '../post-edit-modal/post-edit-modal.component';
 import { Observable, pipe } from 'rxjs';
 
 

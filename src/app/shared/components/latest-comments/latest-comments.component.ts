@@ -11,5 +11,4 @@ import { Comment } from '../../models/comment.model';
 export class LatestCommentsComponent {
   @Input() title: string;
   @Input() comments: Comment[];
-
 }

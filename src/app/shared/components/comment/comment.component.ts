@@ -10,6 +10,7 @@ export class CommentComponent implements OnInit {
 
   @Input() name: string;
   @Input() body: string;
+  @Input() date: Date;
 
   constructor() { }
 

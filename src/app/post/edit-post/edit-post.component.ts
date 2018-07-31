@@ -5,6 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 import {Post} from '../../shared/models/post.model';
 import {PostService} from '../../shared/services/post.service';
 import {AlertService} from '../../shared/services/alert.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-edit-post',
@@ -13,7 +14,7 @@ import {AlertService} from '../../shared/services/alert.service';
 })
 export class EditPostComponent implements OnInit {
   editPostForm: FormGroup;
-  post: Post;
+  post$: Observable<Post>;
 
   postID: number;
   constructor(
@@ -29,6 +30,7 @@ export class EditPostComponent implements OnInit {
       'title': [null, Validators.required],
       'post': [null, Validators.required]
     });
+    this.post$ = this.postService.getPostById(this.postID);
   }
   updatePost(editPostForm) {
     this.postService.updatePost(this.postID, this.editPostForm.value)

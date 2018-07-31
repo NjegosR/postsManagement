@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -38,7 +37,6 @@ const toastrConfig = {
     NgbModule.forRoot(),
     ReactiveFormsModule,
     ToastrModule.forRoot(toastrConfig),
-    BrowserAnimationsModule,
     SharedModule
   ],
   providers: [],

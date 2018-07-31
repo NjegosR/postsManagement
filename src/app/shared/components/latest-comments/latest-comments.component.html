@@ -5,6 +5,6 @@
     </div>
   </div>
   <div *ngFor="let comment of comments">
-    <app-comment [name]="comment?.name" [body]="comment?.body"></app-comment>
+    <app-comment [name]="comment?.name" [body]="comment?.body" [date]="comment?.date"></app-comment>
   </div>
 </div>
