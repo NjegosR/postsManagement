@@ -1,0 +1,11 @@
+<form [formGroup]="editPostForm">
+  <div class="row">
+    <div class="form-group col">
+      <label><strong>Title</strong></label>
+      <input type="text" class="form-control" formControlName="title">
+      <label><strong>Post:</strong></label>
+      <textarea class="form-control" rows="8" cols="40" formControlName="post"></textarea>
+    </div>
+  </div>
+  <button type="button" class="btn btn-success" (click)="updatePost(postForm)">Update</button>
+</form>
