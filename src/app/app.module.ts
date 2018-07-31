@@ -6,13 +6,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrModule } from 'ngx-toastr';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostListComponent } from './post/post-list/post-list.component';
 import { PostDetailsComponent } from './post/post-details/post-details.component';
 import { PostEditModalComponent } from './post/post-edit-modal/post-edit-modal.component';
-import { ToastrModule } from 'ngx-toastr';
 import { PostAddComponent } from './post/post-add/post-add.component';
 import { SharedModule } from './shared/shared.module';
 
@@ -40,7 +40,7 @@ const toastrConfig = {
     SharedModule
   ],
   providers: [],
-  entryComponents: [PostEditModalComponent],
+  // entryComponents: [PostEditModalComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,9 +8,14 @@ import { PostAddComponent } from './post/post-add/post-add.component';
 const routes: Routes = [
   {
     path: '',
-    component: PostListComponent,
+    redirectTo: 'posts',
     pathMatch: 'full'
   },
+  {
+    path: 'posts',
+    component: PostListComponent,
+  },
+  // @todo add edit component functionality
   {
     path: 'posts/add',
     component: PostAddComponent

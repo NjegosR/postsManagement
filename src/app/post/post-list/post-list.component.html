@@ -20,15 +20,17 @@
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let post of posts$ | async">
-                  <td> {{ post.title }} </td>
-                  <td> {{ (post.body | slice:0:70) }}... </td>
-                  <td>
-                    <a class="btn btn-default btn-sm" [routerLink]="['posts/', post.id, post.userId]">
-                      <i class="fa fa-info"></i>
-                    </a>
-                  </td>
-                </tr>
+                <ng-container *ngFor="let post of posts$ | async">
+                  <tr>
+                    <td> {{ post.title }} </td>
+                    <td> {{ (post.body | slice:0:70) }}... </td>
+                    <td>
+                      <a class="btn btn-default btn-sm" [routerLink]="['posts/', post.id, post.userId]">
+                        <i class="fa fa-info"></i>
+                      </a>
+                    </td>
+                  </tr>
+                </ng-container>
               </tbody>
             </table>
           </div>

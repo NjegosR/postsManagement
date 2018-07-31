@@ -32,7 +32,10 @@ export class PostEditModalComponent implements OnInit {
     this.postForm = new FormGroup({ post: new FormControl(this.body)});
   }
   updatePost(form) {
-    this.postService.updatePost(this.postId, form.value);
-    this.activeModal.close();
+    this.postService.updatePost(this.postId, form.value)
+      .subscribe((data ) => {
+        this.activeModal.close();
+      });
+
   }
 }
