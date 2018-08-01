@@ -5,13 +5,6 @@
     </div>
   </div>
   <div *ngFor="let comment of comments">
-    <div class="card">
-      <div class="card-header">
-        {{ comment?.name }}
-      </div>
-      <div class="card-body">
-        {{ comment?.body }}
-      </div>
-    </div>
+    <app-comment [name]="comment?.name" [body]="comment?.body" [date]="comment?.date"></app-comment>
   </div>
 </div>

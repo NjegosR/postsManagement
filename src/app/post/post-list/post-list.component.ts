@@ -17,9 +17,6 @@ import { Observable } from 'rxjs';
 export class PostListComponent implements OnInit {
   posts$: Observable<Post[]>;
   comments$: Observable<Comment[]>;
-
-  title = 'Comments';
-
   constructor(
     private postService: PostService,
     private commentsService: CommentsService,

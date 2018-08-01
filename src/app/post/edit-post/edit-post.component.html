@@ -1,0 +1,12 @@
+<form [formGroup]="editPostForm">
+  <div class="row">
+    <div class="form-group col">
+      <label><strong>Title</strong></label>
+      <input type="text" class="form-control" formControlName="title" [ngModel]="(post$ | async)?.title">
+      <label><strong>Post:</strong></label>
+      <textarea class="form-control" cols="1" rows="5" formControlName="post" [ngModel]="(post$ | async)?.body">
+</textarea>
+    </div>
+  </div>
+  <button type="button" class="btn btn-success" (click)="updatePost(editPostForm)">Update</button>
+</form>

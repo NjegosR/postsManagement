@@ -1,0 +1,8 @@
+  <td>{{title}}</td>
+  <td>{{(body | slice:0:70)}}</td>
+  <td>
+    <a class="btn btn-default btn-sm" [routerLink]="['posts/', postID, userID]">
+      <i class="fa fa-info"></i>
+    </a>
+  </td>
+
