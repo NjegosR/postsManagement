@@ -3,11 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IPost } from '../../shared/models/post.model';
 import { PostService } from '../../shared/services/post.service';
 import { Comment } from '../../shared/models/comment.model';
-import { CommentsService } from '../../shared/services/comments.service';
 import { User } from '../../shared/models/user.model';
 import { UserService } from '../../shared/services/user.service';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Observable, pipe } from 'rxjs';
+import { Observable } from 'rxjs';
+import {CommentsService} from '../../shared/services/comments.service';
 
 
 @Component({
@@ -22,16 +21,14 @@ export class PostDetailsComponent implements OnInit {
   post$: Observable<IPost>;
   user$: Observable<User>;
   comments$: Observable<Comment[]>;
-  commentsAll$: Observable<Comment[]>;
 
 
   constructor(
     private router: Router,
     private activatedRouter: ActivatedRoute,
-    private postService: PostService,
     private commentsService: CommentsService,
+    private postService: PostService,
     private userService: UserService,
-    private modal: NgbModal
   ) {
   }
 
@@ -42,17 +39,8 @@ export class PostDetailsComponent implements OnInit {
     this.post$ = this.postService.getPostById(this.postID);
     this.user$ = this.userService.getUserById(this.userID);
     this.comments$ = this.commentsService.getCommentsForPost(this.postID);
-    this.commentsAll$ = this.commentsService.getAllComments();
 
   }
-  /*editPost() {
-    this.router.navigateByUrl(`posts/edit/` + this.postID);
-  }
-
-  navigate() {
-    this.router.navigateByUrl('posts/add');
-  }*/
-
   buttonClicked(titleChosen: string) {
     const titleArray = titleChosen.split(' ');
     let title = titleArray[0].toLocaleLowerCase();

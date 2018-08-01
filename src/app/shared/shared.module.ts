@@ -8,6 +8,7 @@ import { LatestCommentsComponent } from './components/latest-comments/latest-com
 import { AlertService } from './services/alert.service';
 import { CommentComponent } from './components/comment/comment.component';
 import { ButtonComponent } from './button/button.component';
+import {TimeAgoPipe} from './pipes/time-ago.pipe';
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { ButtonComponent } from './button/button.component';
     FooterComponent,
     LatestCommentsComponent,
     CommentComponent,
-    ButtonComponent
+    ButtonComponent,
+    TimeAgoPipe
   ],
   exports: [
     HeaderComponent,

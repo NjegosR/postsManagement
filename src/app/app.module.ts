@@ -16,6 +16,7 @@ import { PostAddComponent } from './post/post-add/post-add.component';
 import { SharedModule } from './shared/shared.module';
 import { EditPostComponent } from './post/edit-post/edit-post.component';
 import { PostListItemComponent } from './post/post-list-item/post-list-item.component';
+import { TimeAgoPipe } from './shared/pipes/time-ago.pipe';
 
 const toastrConfig = {
   timeOut: 2000
@@ -28,7 +29,8 @@ const toastrConfig = {
     PostDetailsComponent,
     PostAddComponent,
     EditPostComponent,
-    PostListItemComponent
+    PostListItemComponent,
+
   ],
   imports: [
     BrowserModule,
