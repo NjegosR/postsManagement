@@ -18,16 +18,5 @@ export class AlertService {
   tasks(arg: number, arg2: object, arg3?: string) {
 
     // @todo task
-    // what is difference
-    const string: String = '';
-    let string2: string = '';
-
-    // difference between var, let and const
-
-    // what is different in function and arrow function
-    // function -> function myF() {}
-    function myF() {}
-    // arrow -> const myF = () => {}
-    const my2F = () => {};
   }
 }

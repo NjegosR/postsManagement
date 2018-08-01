@@ -28,7 +28,6 @@ export class LatestCommentsComponent {
           }
         );
       });
-      console.log(this.array);
     }
   }
 

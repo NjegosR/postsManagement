@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
-import { IPost } from '../../shared/models/post.model';
-import { PostService } from '../../shared/services/post.service';
-import { Comment } from '../../shared/models/comment.model';
-import { User } from '../../shared/models/user.model';
-import { UserService } from '../../shared/services/user.service';
-import { Observable } from 'rxjs';
+import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import {IPost} from '../../shared/models/post.model';
+import {PostService} from '../../shared/services/post.service';
+import {Comment} from '../../shared/models/comment.model';
+import {User} from '../../shared/models/user.model';
+import {UserService} from '../../shared/services/user.service';
+import {Observable} from 'rxjs';
 import {CommentsService} from '../../shared/services/comments.service';
 
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.Default,
   selector: 'app-post-details',
   templateUrl: './post-details.component.html',
   styleUrls: ['./post-details.component.scss']
@@ -21,7 +22,6 @@ export class PostDetailsComponent implements OnInit {
   post$: Observable<IPost>;
   user$: Observable<User>;
   comments$: Observable<Comment[]>;
-
 
   constructor(
     private router: Router,

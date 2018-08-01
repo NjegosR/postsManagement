@@ -1,5 +1,5 @@
-  <td>{{post?.title}}</td>
-  <td>{{post?.body | slice:0:70}}</td>
+  <td><div>{{post?.title}}</div></td>
+  <td><div>{{post?.body | slice:0:70}}</div></td>
   <td>
     <a class="btn btn-default btn-sm" [routerLink]="['./', post?.id, post?.userId]">
       <i class="fa fa-info"></i>

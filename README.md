@@ -14,24 +14,20 @@ ng serve
 
 ## Client url: http://localhost:4200
 
-The app will automatically reload if you change any of the source files.
+## ToDO
 
-## Code scaffolding
+Remove bootstrap and other unused deps
+merge edit and post component
+move add post to post list component
+after adding post redirect user to post list
+in post detail, after post is fetched from API trigger fetch of user
+post detail route should be only post/1 ( without user id in uri )
+figure out what is first class citizen in programming languages especially in js
+write readme
+move button to shared components
+create input dumb component
+fix smart dumb components strategy. Smart are under routes, all other are dumb.
+fix footer styling
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+popravi i pipe da prikazuje i week ago, 2 weeks ago i slicno

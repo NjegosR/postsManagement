@@ -3,7 +3,11 @@
     <thead>
     <tr>
       <td class="text-center" colspan="3">
-        <h4>Posts</h4>
+        <h4 class="float-left">Posts</h4>
+        <app-button
+          title="Add Post"
+          (titleChosen)="buttonClicked($event)"
+        ></app-button>
       </td>
     </tr>
     <tr>
@@ -14,9 +18,7 @@
     </thead>
     <tbody>
     <ng-container *ngFor="let post of posts$ | async">
-      <tr app-post-list-item
-          [post]="post"
-      ></tr>
+      <app-post-list-item [post]="post"></app-post-list-item>
     </ng-container>
     </tbody>
   </table>
