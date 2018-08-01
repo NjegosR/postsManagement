@@ -24,7 +24,7 @@ export class LatestCommentsComponent {
         this.array.push(
           {
             ...comment,
-            date: this.randomDate(new Date(2017, 0, 1), new Date())
+            date: this.randomDate(new Date(2016, 0, 1), new Date())
           }
         );
       });
