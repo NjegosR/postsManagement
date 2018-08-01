@@ -26,7 +26,7 @@ const routes: Routes = [
   },
   {
     // should be posts/:id - then in service where you get post subscribe on that result and then find user id
-    path: 'posts/:id/:userId',
+    path: 'posts/:id',
     component: PostDetailsComponent
   }
 ];

@@ -52,7 +52,7 @@ export class AddEditPostComponent implements OnInit {
         this.alert.error('Unexpectied server error!');
       });
     setTimeout(() => {
-      this.router.navigateByUrl(`posts`);
+      this.router.navigateByUrl(`posts/${this.postID}`);
     }, 1000);
   }
   addPost(form) {

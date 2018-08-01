@@ -22,6 +22,7 @@ export class PostDetailsComponent implements OnInit {
   post$: Observable<IPost>;
   user$: Observable<User>;
   comments$: Observable<Comment[]>;
+  post: IPost;
 
   constructor(
     private router: Router,
@@ -34,12 +35,13 @@ export class PostDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.postID = this.activatedRouter.snapshot.params['id'];
-    this.userID = this.activatedRouter.snapshot.params['userId'];
-
-    this.post$ = this.postService.getPostById(this.postID);
-    this.user$ = this.userService.getUserById(this.userID);
+    this.postService.getPostById(this.postID)
+      .subscribe(result => {
+        this.post = result;
+        this.userID =  this.post.userId;
+        this.user$ = this.userService.getUserById(this.userID);
+      });
     this.comments$ = this.commentsService.getCommentsForPost(this.postID);
-
   }
   buttonClicked(titleChosen: string) {
     const titleArray = titleChosen.split(' ');

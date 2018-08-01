@@ -1,7 +1,7 @@
   <td><div>{{post?.title}}</div></td>
   <td><div>{{post?.body | slice:0:70}}</div></td>
   <td>
-    <a class="btn btn-default btn-sm" [routerLink]="['./', post?.id, post?.userId]">
+    <a class="btn btn-default btn-sm" [routerLink]="['./', post?.id]">
       <i class="fa fa-info"></i>
     </a>
   </td>

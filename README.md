@@ -28,6 +28,3 @@ move button to shared components
 create input dumb component
 fix smart dumb components strategy. Smart are under routes, all other are dumb.
 fix footer styling
-
-
-popravi i pipe da prikazuje i week ago, 2 weeks ago i slicno
