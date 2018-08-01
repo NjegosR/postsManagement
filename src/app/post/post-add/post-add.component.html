@@ -8,9 +8,13 @@
           </div>
           <div class="form-group col-12">
               <label><strong>Body:</strong></label>
-              <textarea class="form-control" formControlName="body"></textarea>
+              <textarea class="form-control" cols="1" rows="5" formControlName="body"></textarea>
           </div>
         </div>
-        <input type="submit" class="btn btn-outline-primary float-right" value="Submit" (click)="addPost(addPostForm)">
+      <app-button
+        title="Submit"
+        [disabled]="!addPostForm.valid"
+        (titleChosen)="buttonClicked($event, addPostForm)"
+      ></app-button>
       </form>
 </div>

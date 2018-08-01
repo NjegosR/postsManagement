@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { PostService } from '../../shared/services/post.service';
 import { CommentsService } from '../../shared/services/comments.service';
 import { Comment } from '../../shared/models/comment.model';
-import { Post } from '../../shared/models/post.model';
+import { IPost } from '../../shared/models/post.model';
 
 import { Observable } from 'rxjs';
 
@@ -15,7 +15,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./post-list.component.scss']
 })
 export class PostListComponent implements OnInit {
-  posts$: Observable<Post[]>;
+  posts$: Observable<IPost[]>;
   comments$: Observable<Comment[]>;
   constructor(
     private postService: PostService,

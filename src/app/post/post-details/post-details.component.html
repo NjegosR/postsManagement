@@ -38,15 +38,16 @@
         </div>
         </div>
       </div>
-      <button  class="btn btn-lg btn-outline-primary mt-md-3 float-right" (click)="editPost()">Edit Post</button>
-      <button class="btn btn-lg btn-outline-primary mt-md-3 mr-md-3 float-right" (click)="navigate()">Add Post</button>
+      <!--<button  class="btn btn-lg btn-outline-primary mt-md-3 float-right" (click)="editPost()">Edit Post</button>
+      <button class="btn btn-lg btn-outline-primary mt-md-3 mr-md-3 float-right" (click)="navigate()">Add Post</button>-->
+      <app-button
+        title="Edit Post"
+        (titleChosen)="buttonClicked($event)"
+      ></app-button>
+      <app-button
+        title="Add Post"
+        (titleChosen)="buttonClicked($event)"
+      ></app-button>
     </div>
   </div>
 </div>
-<!--<div class="container">-->
-  <!--<div class="row">-->
-    <!--<div class="col-12" style="background-color: red">-->
-
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->

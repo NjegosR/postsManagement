@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
-import { Post } from '../../shared/models/post.model';
+import { IPost } from '../../shared/models/post.model';
 import { PostService } from '../../shared/services/post.service';
 import { AlertService } from '../../shared/services/alert.service';
 
@@ -13,7 +13,7 @@ import { AlertService } from '../../shared/services/alert.service';
 })
 export class PostAddComponent implements OnInit {
   addPostForm: FormGroup;
-  post: Post;
+  post: IPost;
 
   constructor(
     private postService: PostService,
@@ -36,5 +36,9 @@ export class PostAddComponent implements OnInit {
       this.alert.error('Unexpected server error!');
     }
     );
+  }
+  buttonClicked(title, form) {
+
+    this.addPost(form);
   }
 }

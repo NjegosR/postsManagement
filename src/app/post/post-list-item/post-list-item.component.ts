@@ -1,4 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {IPost} from '../../shared/models/post.model';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -7,8 +8,5 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
   styleUrls: ['./post-list-item.component.scss']
 })
 export class PostListItemComponent {
-  @Input() title;
-  @Input() body;
-  @Input() postID;
-  @Input() userID;
+  @Input() post: IPost;
 }

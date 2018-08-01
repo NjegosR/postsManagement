@@ -8,5 +8,9 @@
 </textarea>
     </div>
   </div>
-  <button type="button" class="btn btn-success" (click)="updatePost(editPostForm)">Update</button>
+  <app-button
+    [disabled]="!editPostForm.valid"
+    title="Update"
+    (titleChosen)="buttonClicked($event, editPostForm)"
+  ></app-button>
 </form>

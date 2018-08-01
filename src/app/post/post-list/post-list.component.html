@@ -15,10 +15,7 @@
     <tbody>
     <ng-container *ngFor="let post of posts$ | async">
       <tr app-post-list-item
-          [body]="post?.body"
-          [title]="post?.title"
-          [postID]="post?.id"
-          [userID]="post?.userId"
+          [post]="post"
       ></tr>
     </ng-container>
     </tbody>

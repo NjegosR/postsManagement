@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Post } from '../../shared/models/post.model';
+import { IPost } from '../../shared/models/post.model';
 import { PostService } from '../../shared/services/post.service';
 import { Comment } from '../../shared/models/comment.model';
 import { CommentsService } from '../../shared/services/comments.service';
@@ -19,7 +19,7 @@ export class PostDetailsComponent implements OnInit {
   postID: number;
   userID: number;
 
-  post$: Observable<Post>;
+  post$: Observable<IPost>;
   user$: Observable<User>;
   comments$: Observable<Comment[]>;
   commentsAll$: Observable<Comment[]>;
@@ -45,12 +45,21 @@ export class PostDetailsComponent implements OnInit {
     this.commentsAll$ = this.commentsService.getAllComments();
 
   }
-  editPost() {
+  /*editPost() {
     this.router.navigateByUrl(`posts/edit/` + this.postID);
   }
 
   navigate() {
     this.router.navigateByUrl('posts/add');
+  }*/
+
+  buttonClicked(titleChosen: string) {
+    const titleArray = titleChosen.split(' ');
+    let title = titleArray[0].toLocaleLowerCase();
+    if (title === 'edit') {
+      title += `/${this.postID}`;
+    }
+    this.router.navigateByUrl(`posts/${title}`);
   }
 
 }

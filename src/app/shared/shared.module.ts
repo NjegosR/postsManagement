@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LatestCommentsComponent } from './components/latest-comments/latest-comments.component';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AlertService } from './services/alert.service';
 import { CommentComponent } from './components/comment/comment.component';
+import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   imports: [
@@ -16,13 +17,15 @@ import { CommentComponent } from './components/comment/comment.component';
     HeaderComponent,
     FooterComponent,
     LatestCommentsComponent,
-    CommentComponent
+    CommentComponent,
+    ButtonComponent
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     LatestCommentsComponent,
     CommentComponent,
+    ButtonComponent
   ],
   providers: [
     NgbActiveModal,
