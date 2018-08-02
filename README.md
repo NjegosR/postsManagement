@@ -4,17 +4,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Install / Development
 
-git clone https://github.com/NjegosR/postsManagement.git
+### git clone https://github.com/NjegosR/postsManagement.git
 
 ## Install dependencies
-npm install
+### npm install
 
 ## start server
-ng serve
+### ng serve
 
 ## Client url: http://localhost:4200
 
-> This is a blockquote
-> #inside a list item.
-> This is a blockquote
-    > inside a list item.
