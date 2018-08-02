@@ -5,7 +5,7 @@
 > You can use this app to get all posts, comments and users from https://jsonplaceholder.typicode.com/.<br>
 This project was generated with Angular CLI version 6.0.8.
 
-## Code Samples
+## Angular principles which were followed
 
 * Smart/Dumb components
 * Services for API calls
