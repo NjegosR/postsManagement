@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { PostService } from '../../shared/services/post.service';
 import { IPost } from '../../shared/models/post.model';
-import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 
@@ -14,8 +14,6 @@ import { Observable } from 'rxjs';
 })
 export class PostListComponent implements OnInit {
   posts$: Observable<IPost[]>;
-
-  postID: number;
   constructor(
     private router: Router,
     private postService: PostService,
@@ -24,7 +22,7 @@ export class PostListComponent implements OnInit {
   ngOnInit() {
     this.posts$ = this.postService.getAllPosts();
   }
-  buttonClicked(titleChosen: string) {
+  buttonClicked() {
     this.router.navigateByUrl(`posts/add`);
   }
 }

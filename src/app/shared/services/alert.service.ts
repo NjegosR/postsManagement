@@ -14,9 +14,4 @@ export class AlertService {
   error(message, title?) {
     return this.toastrService.error(message, title);
   }
-
-  tasks(arg: number, arg2: object, arg3?: string) {
-
-    // @todo task
-  }
 }

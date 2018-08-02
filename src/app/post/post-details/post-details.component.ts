@@ -1,12 +1,15 @@
 import {ChangeDetectionStrategy, Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
+
 import {IPost} from '../../shared/models/post.model';
 import {PostService} from '../../shared/services/post.service';
 import {Comment} from '../../shared/models/comment.model';
 import {User} from '../../shared/models/user.model';
 import {UserService} from '../../shared/services/user.service';
-import {Observable} from 'rxjs';
 import {CommentsService} from '../../shared/services/comments.service';
+
+import {Observable} from 'rxjs';
+
 
 
 @Component({

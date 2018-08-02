@@ -1,10 +1,11 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {PostService} from '../../shared/services/post.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Observable, Subscription} from 'rxjs';
+
+import {PostService} from '../../shared/services/post.service';
 import {AlertService} from '../../shared/services/alert.service';
 import {IPost} from '../../shared/models/post.model';
-import {Observable} from 'rxjs';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -12,13 +13,14 @@ import {Observable} from 'rxjs';
   templateUrl: './add-edit-post.component.html',
   styleUrls: ['./add-edit-post.component.scss']
 })
-export class AddEditPostComponent implements OnInit {
+export class AddEditPostComponent implements OnInit, OnDestroy {
   addEditPostForm: FormGroup;
   post$: Observable<IPost>;
   isAdd: boolean;
   url: Observable<any[]>;
   postID: number;
   currentTitle: string;
+  sub: Subscription;
 
   constructor(
     private  router: Router,
@@ -46,7 +48,7 @@ export class AddEditPostComponent implements OnInit {
     });
   }
   updatePost(form) {
-    this.postService.updatePost(this.postID, form.value)
+    this.sub = this.postService.updatePost(this.postID, form.value)
       .subscribe(result => {
         this.alert.success('Post updated!');
       }, (error) => {
@@ -57,7 +59,7 @@ export class AddEditPostComponent implements OnInit {
     }, 1000);
   }
   addPost(form) {
-    this.postService.createPost(form.value).subscribe(result => {
+    this.sub = this.postService.createPost(form.value).subscribe(result => {
         this.alert.success('Post added!');
       },
       (error) => {
@@ -78,5 +80,8 @@ export class AddEditPostComponent implements OnInit {
   }
   newTitle(title) {
     this.currentTitle = title;
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 }

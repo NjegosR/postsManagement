@@ -19,6 +19,7 @@
           <label><strong>Title:</strong></label>
           <app-input [value]="(post$ | async)?.title"  (title)="newTitle($event)"></app-input>
           <label><strong>Body:</strong></label>
+          <!--<textarea class="form-control" cols="1" rows="5" formControlName="body" [ngModel]="(post$ | async)?.body"></textarea>-->
           <textarea class="form-control" cols="1" rows="5" formControlName="body">{{(post$ | async)?.body}}</textarea>
         </ng-template>
 

@@ -1,4 +1,5 @@
-import {ChangeDetectionStrategy, Component, Input, ViewEncapsulation} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input } from '@angular/core';
+
 import {IPost} from '../../shared/models/post.model';
 
 @Component({
