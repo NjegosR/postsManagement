@@ -9,6 +9,7 @@ import { AlertService } from './services/alert.service';
 import { CommentComponent } from './components/comment/comment.component';
 import { ButtonComponent } from './components/button/button.component';
 import {TimeAgoPipe} from './pipes/time-ago.pipe';
+import { InputComponent } from './components/input/input.component';
 
 @NgModule({
   imports: [
@@ -20,14 +21,16 @@ import {TimeAgoPipe} from './pipes/time-ago.pipe';
     LatestCommentsComponent,
     CommentComponent,
     ButtonComponent,
-    TimeAgoPipe
+    TimeAgoPipe,
+    InputComponent
   ],
   exports: [
     HeaderComponent,
     FooterComponent,
     LatestCommentsComponent,
     CommentComponent,
-    ButtonComponent
+    ButtonComponent,
+    InputComponent
   ],
   providers: [
     NgbActiveModal,

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {IPost} from '../../shared/models/post.model';
 import {PostService} from '../../shared/services/post.service';
@@ -15,11 +15,10 @@ import {CommentsService} from '../../shared/services/comments.service';
   templateUrl: './post-details.component.html',
   styleUrls: ['./post-details.component.scss']
 })
-export class PostDetailsComponent implements OnInit {
+export class PostDetailsComponent implements OnInit, OnDestroy {
   postID: number;
   userID: number;
 
-  post$: Observable<IPost>;
   user$: Observable<User>;
   comments$: Observable<Comment[]>;
   post: IPost;
@@ -42,6 +41,7 @@ export class PostDetailsComponent implements OnInit {
         this.user$ = this.userService.getUserById(this.userID);
       });
     this.comments$ = this.commentsService.getCommentsForPost(this.postID);
+
   }
   buttonClicked(titleChosen: string) {
     const titleArray = titleChosen.split(' ');
@@ -50,6 +50,8 @@ export class PostDetailsComponent implements OnInit {
       title += `/${this.postID}`;
     }
     this.router.navigateByUrl(`posts/${title}`);
+  }
+  ngOnDestroy() {
   }
 
 }
