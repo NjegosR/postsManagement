@@ -46,7 +46,6 @@ export class AddEditPostComponent implements OnInit {
     });
   }
   updatePost(form) {
-    form.value.title = this.currentTitle;
     this.postService.updatePost(this.postID, form.value)
       .subscribe(result => {
         this.alert.success('Post updated!');
@@ -58,7 +57,6 @@ export class AddEditPostComponent implements OnInit {
     }, 1000);
   }
   addPost(form) {
-    form.value.title = this.currentTitle;
     this.postService.createPost(form.value).subscribe(result => {
         this.alert.success('Post added!');
       },
@@ -71,6 +69,7 @@ export class AddEditPostComponent implements OnInit {
     }, 1000);
   }
   buttonClicked(title, form) {
+    form.value.title = this.currentTitle;
     if (this.isAdd) {
       this.addPost(form);
     } else {
