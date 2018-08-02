@@ -78,7 +78,6 @@ export class AddEditPostComponent implements OnInit {
     }
   }
   newTitle(title) {
-    console.log(title);
     this.currentTitle = title;
   }
 }
