@@ -17,7 +17,8 @@ This project was generated with Angular CLI version 6.0.8.
 
 ## Installation
 
-> ### git clone 
+> 
+### git clone 
 https://github.com/NjegosR/postsManagement.git
 ### Install dependencies
 npm install
