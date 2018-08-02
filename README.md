@@ -1,16 +1,28 @@
 # PostsManagement
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+## Introduction
 
-# Install / Development
+> You can use this app to get all posts, comments and users from https://jsonplaceholder.typicode.com/.<br>
+This project was generated with Angular CLI version 6.0.8.
 
-### git clone https://github.com/NjegosR/postsManagement.git
+## Code Samples
 
-## Install dependencies
-### npm install
+* Smart/Dumb components
+* Services for API calls
 
-## start server
-### ng serve
+## Application was built with listed technologies
 
-## Client url: http://localhost:4200
+* angular-cli
+* Bootstrap
 
+## Installation
+
+> ### git clone 
+https://github.com/NjegosR/postsManagement.git
+### Install dependencies
+npm install
+### Start server
+ng serve
+### Client url
+http://localhost:4200 <br>
+The app will automatically reload if you change any of the source files.
