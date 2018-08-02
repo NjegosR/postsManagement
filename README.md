@@ -5,19 +5,20 @@
 > You can use this app to get all posts, comments and users from https://jsonplaceholder.typicode.com/.<br>
 This project was generated with Angular CLI version 6.0.8.
 
-## Code Samples
+## Angular principles which were followed
 
 * Smart/Dumb components
 * Services for API calls
 
-## Application must be built with listed technologies
+## Application was built with listed technologies
 
 * angular-cli
 * Bootstrap
 
 ## Installation
 
-> ### git clone 
+> 
+### git clone 
 https://github.com/NjegosR/postsManagement.git
 ### Install dependencies
 npm install
