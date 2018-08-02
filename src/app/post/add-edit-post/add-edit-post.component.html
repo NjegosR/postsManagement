@@ -7,27 +7,30 @@
   <form [formGroup]="addEditPostForm">
     <div class="row">
       <div class="form-group col-12">
+
         <ng-container *ngIf="isAdd; else elseBlock1">
           <label><strong>Title:</strong></label>
-          <!--<input type="text" class="form-control" formControlName="title">-->
-          <app-input></app-input>
+          <app-input (title)="newTitle($event)"></app-input>
           <label><strong>Body:</strong></label>
           <textarea class="form-control" cols="1" rows="5" formControlName="body"></textarea>
         </ng-container>
+
         <ng-template #elseBlock1>
           <label><strong>Title:</strong></label>
-          <!--<input type="text" class="form-control" formControlName="title" value="{{(post$ | async)?.title}}">-->
-          <app-input [value]="(post$ | async)?.title"></app-input>
+          <app-input [value]="(post$ | async)?.title"  (title)="newTitle($event)"></app-input>
           <label><strong>Body:</strong></label>
           <textarea class="form-control" cols="1" rows="5" formControlName="body">{{(post$ | async)?.body}}</textarea>
         </ng-template>
+
       </div>
     </div>
+
     <app-button *ngIf="isAdd; else elseBlock2"
       title="Add"
-      [disabled]="!addEditPostForm.valid"
+      [disabled]="addEditPostForm.valid"
       (titleChosen)="buttonClicked($event, addEditPostForm)"
     ></app-button>
+
     <ng-template #elseBlock2>
       <app-button
         [disabled]="addEditPostForm.valid"

@@ -1,1 +1,1 @@
-<input type="text" class="form-control" formControlName="title" value="{{value}}">
+<input #input type="text" class="form-control" formControlName="title" value="{{value}}" (change)="title.emit(input.value)">

@@ -18,6 +18,7 @@ export class AddEditPostComponent implements OnInit {
   isAdd: boolean;
   url: Observable<any[]>;
   postID: number;
+  currentTitle: string;
 
   constructor(
     private  router: Router,
@@ -45,6 +46,7 @@ export class AddEditPostComponent implements OnInit {
     });
   }
   updatePost(form) {
+    form.value.title = this.currentTitle;
     this.postService.updatePost(this.postID, form.value)
       .subscribe(result => {
         this.alert.success('Post updated!');
@@ -56,6 +58,7 @@ export class AddEditPostComponent implements OnInit {
     }, 1000);
   }
   addPost(form) {
+    form.value.title = this.currentTitle;
     this.postService.createPost(form.value).subscribe(result => {
         this.alert.success('Post added!');
       },
@@ -73,5 +76,9 @@ export class AddEditPostComponent implements OnInit {
     } else {
       this.updatePost(form);
     }
+  }
+  newTitle(title) {
+    console.log(title);
+    this.currentTitle = title;
   }
 }

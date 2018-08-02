@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -9,4 +9,5 @@ import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 export class InputComponent {
   @Input() value: string;
 
+  @Output() title = new EventEmitter<string>();
 }
