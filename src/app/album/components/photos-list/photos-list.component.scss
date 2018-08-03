@@ -1,0 +1,11 @@
+.card {
+  float: left;
+  height: 420px;
+  margin-left: 65px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
+.card:hover{
+  transform: scale(1.1);
+  border: 1px solid black;
+}

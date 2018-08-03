@@ -1,12 +1,13 @@
-<div class="container">
-  <h3>Albums</h3>
-  <ng-container *ngFor="let album of albums$ | async">
-    <a [routerLink]="['./', album.id]">
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">{{album.title}}</h5>
-      </div>
-    </div>
-    </a>
-  </ng-container>
+<div>
+    <h3 class="text-center" id="naslov">Albums</h3>
+    <ng-container *ngFor="let album of albums$ | async">
+      <a [routerLink]="['./', album.id]">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="text-center">Album {{album.id}}</h5>
+            <p class="card-title text-center">{{album.title}}</p>
+          </div>
+        </div>
+      </a>
+    </ng-container>
 </div>

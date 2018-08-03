@@ -24,11 +24,10 @@
 
       </div>
     </div>
-    {{ addEditPostForm.valid | json }}
     <app-button
       [title]="(isAdd) ? 'Add' : 'Update'"
       [disabled]="!addEditPostForm.valid"
-      (titleChosen)="buttonClicked($event, addEditPostForm)"
+      (titleChosen)="buttonClicked(addEditPostForm)"
     ></app-button>
 
   </form>

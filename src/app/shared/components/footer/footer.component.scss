@@ -4,4 +4,13 @@ footer {
     display: block;
     float: left;
   }
+  .myClass{
+    transform: scale(1.8);
+    float: right;
+    margin-top: 10px;
+    margin-right: 80px;
+    a{
+      color: #000000;
+    }
+  }
 }

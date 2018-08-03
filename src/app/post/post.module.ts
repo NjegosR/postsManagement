@@ -8,6 +8,7 @@ import {AlertService} from '../shared/services/alert.service';
 import {SharedModule} from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import {AppRoutingModule} from '../app-routing.module';
+import {UserDetailComponent} from './components/user-detail/user-detail.component';
 
 
 
@@ -22,13 +23,15 @@ import {AppRoutingModule} from '../app-routing.module';
     AddEditPostComponent,
     PostDetailsComponent,
     PostListComponent,
-    PostListItemComponent
+    PostListItemComponent,
+    UserDetailComponent
   ],
   exports: [
     AddEditPostComponent,
     PostDetailsComponent,
     PostListComponent,
     PostListItemComponent,
+    UserDetailComponent
   ],
   providers: [
     AlertService

@@ -1,5 +1,10 @@
-<div>
-  <ng-container *ngFor="let photo of photos$ | async">
-    <p>{{photo.id}}</p>
-  </ng-container>
-</div>
+    <ng-container *ngFor="let photo of photos$ | async">
+      <div class="card" style="width: 18rem;">
+        <a href="{{photo.url}}" target="_blank">
+          <img class="card-img-top" src="{{photo.thumbnailUrl}}" alt="Card image cap">
+        </a>
+        <div class="card-body">
+          <h5 class="card-title text-center">{{photo.title}}</h5>
+        </div>
+      </div>
+    </ng-container>

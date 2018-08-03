@@ -1,12 +1,14 @@
-<app-header title="PostsManagement" subtitle="Posts" albums="Albums"></app-header>
+<app-header title="PostsManagement" subtitle="Posts" albums="Albums" (path)="albumsClicked($event)"></app-header>
 <div class="container myContainer">
   <div class="row">
     <div class="col">
       <router-outlet></router-outlet>
     </div>
-   <!-- <div class="col-3">
-      <app-latest-comments title="Comments" [comments]="comments$ | async"></app-latest-comments>
-    </div>-->
+    <ng-container *ngIf="!isAlbums">
+      <div class="col-3">
+        <app-latest-comments title="Comments" [comments]="comments$ | async"></app-latest-comments>
+      </div>
+    </ng-container>
   </div>
 </div>
 <app-footer title="PostsManagement" subtitle="Posts"></app-footer>

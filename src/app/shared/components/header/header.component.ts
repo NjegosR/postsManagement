@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import {Component, ChangeDetectionStrategy, Output, EventEmitter} from '@angular/core';
 import { Input } from '@angular/core';
 
 @Component({
@@ -12,5 +12,5 @@ export class HeaderComponent {
   @Input() title: string;
   @Input() subtitle: string;
   @Input() albums: string;
-
+  @Output() path = new EventEmitter<boolean>();
 }

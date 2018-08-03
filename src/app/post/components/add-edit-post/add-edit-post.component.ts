@@ -1,7 +1,7 @@
-import {ChangeDetectionStrategy, Component, OnInit, OnDestroy} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Observable, Subscription} from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 
 import {AlertService} from '../../../shared/services/alert.service';
@@ -14,13 +14,11 @@ import {PostService} from '../../services/post.service';
   templateUrl: './add-edit-post.component.html',
   styleUrls: ['./add-edit-post.component.scss']
 })
-export class AddEditPostComponent implements OnInit, OnDestroy {
+export class AddEditPostComponent implements OnInit {
   addEditPostForm: FormGroup;
   post$: Observable<IPost>;
   isAdd = true;
   postID: number;
-  currentTitle: string;
-  sub: Subscription;
 
   constructor(
     private  router: Router,
@@ -46,7 +44,7 @@ export class AddEditPostComponent implements OnInit, OnDestroy {
     });
   }
   updatePost(form) {
-    this.sub = this.postService.updatePost(this.postID, form.value)
+   this.postService.updatePost(this.postID, form.value)
       .subscribe(result => {
         this.alert.success('Post updated!');
       }, (error) => {
@@ -57,7 +55,7 @@ export class AddEditPostComponent implements OnInit, OnDestroy {
     }, 1000);
   }
   addPost(form) {
-    this.sub = this.postService.createPost(form.value).subscribe(result => {
+    this.postService.createPost(form.value).subscribe(result => {
         this.alert.success('Post added!');
       },
       (error) => {
@@ -68,15 +66,11 @@ export class AddEditPostComponent implements OnInit, OnDestroy {
       this.router.navigateByUrl(`posts`);
     }, 1000);
   }
-  buttonClicked(title, form) {
-    form.value.title = this.currentTitle;
+  buttonClicked(form) {
     if (this.isAdd) {
       this.addPost(form);
     } else {
       this.updatePost(form);
     }
-  }
-  ngOnDestroy() {
-    this.sub.unsubscribe();
   }
 }

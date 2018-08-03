@@ -9,7 +9,6 @@ import { CommentComponent } from './components/comment/comment.component';
 import { ButtonComponent } from './components/button/button.component';
 import {TimeAgoPipe} from './pipes/time-ago.pipe';
 import { InputComponent } from './components/input/input.component';
-import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import {AppRoutingModule} from '../app-routing.module';
 
 @NgModule({
@@ -24,8 +23,7 @@ import {AppRoutingModule} from '../app-routing.module';
     CommentComponent,
     ButtonComponent,
     TimeAgoPipe,
-    InputComponent,
-    UserDetailComponent
+    InputComponent
   ],
   exports: [
     HeaderComponent,
@@ -34,7 +32,6 @@ import {AppRoutingModule} from '../app-routing.module';
     CommentComponent,
     ButtonComponent,
     InputComponent,
-    UserDetailComponent
   ],
   providers: [
     AlertService
