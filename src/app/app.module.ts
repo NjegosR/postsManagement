@@ -7,7 +7,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
-import {PostModule} from './post/post.module';
+import { PostModule } from './post/post.module';
+import { AlbumModule } from './album/album.module';
 
 const toastrConfig = {
   timeOut: 2000
@@ -24,7 +25,8 @@ const toastrConfig = {
     ToastrModule.forRoot(toastrConfig),
     SharedModule,
     NoopAnimationsModule,
-    PostModule
+    PostModule,
+    AlbumModule
   ],
   providers: [],
   bootstrap: [AppComponent]

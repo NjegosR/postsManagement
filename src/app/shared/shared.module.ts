@@ -10,10 +10,12 @@ import { ButtonComponent } from './components/button/button.component';
 import {TimeAgoPipe} from './pipes/time-ago.pipe';
 import { InputComponent } from './components/input/input.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import {AppRoutingModule} from '../app-routing.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   declarations: [
     HeaderComponent,

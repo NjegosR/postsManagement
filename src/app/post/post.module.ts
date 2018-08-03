@@ -28,7 +28,7 @@ import {AppRoutingModule} from '../app-routing.module';
     AddEditPostComponent,
     PostDetailsComponent,
     PostListComponent,
-    PostListItemComponent
+    PostListItemComponent,
   ],
   providers: [
     AlertService

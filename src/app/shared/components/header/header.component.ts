@@ -11,5 +11,6 @@ export class HeaderComponent {
 
   @Input() title: string;
   @Input() subtitle: string;
+  @Input() albums: string;
 
 }

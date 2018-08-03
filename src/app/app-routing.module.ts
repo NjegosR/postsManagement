@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { PostListComponent } from './post/components/post-list/post-list.component';
 import { PostDetailsComponent } from './post/components/post-details/post-details.component';
 import {AddEditPostComponent} from './post/components/add-edit-post/add-edit-post.component';
+import {AlbumsListComponent} from './album/components/albums-list/albums-list.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,11 @@ const routes: Routes = [
   {
     path: 'posts/:id',
     component: PostDetailsComponent
-  }
+  },
+  {
+    path: 'albums',
+    component: AlbumsListComponent
+  },
 ];
 
 @NgModule({
