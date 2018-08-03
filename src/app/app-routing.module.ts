@@ -5,6 +5,7 @@ import { PostListComponent } from './post/components/post-list/post-list.compone
 import { PostDetailsComponent } from './post/components/post-details/post-details.component';
 import {AddEditPostComponent} from './post/components/add-edit-post/add-edit-post.component';
 import {AlbumsListComponent} from './album/components/albums-list/albums-list.component';
+import {PhotosListComponent} from './album/components/photos-list/photos-list.component';
 
 
 const routes: Routes = [
@@ -33,6 +34,10 @@ const routes: Routes = [
     path: 'albums',
     component: AlbumsListComponent
   },
+  {
+    path: 'albums/:id',
+    component: PhotosListComponent
+  }
 ];
 
 @NgModule({

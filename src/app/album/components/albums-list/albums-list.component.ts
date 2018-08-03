@@ -1,4 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
+import {AlbumService} from '../../services/album.service';
+import {Observable} from 'rxjs';
+import {IAlbum} from '../../../shared/models/album.model';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -7,10 +10,12 @@ import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
   styleUrls: ['./albums-list.component.scss']
 })
 export class AlbumsListComponent implements OnInit {
+  albums$: Observable<IAlbum[]>;
 
-  constructor() { }
+  constructor(private albumService: AlbumService) { }
 
   ngOnInit() {
+    this.albums$ = this.albumService.getAllAlbums();
   }
 
 }
