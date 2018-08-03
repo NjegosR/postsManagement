@@ -10,35 +10,26 @@
 
         <ng-container *ngIf="isAdd; else elseBlock1">
           <label><strong>Title:</strong></label>
-          <app-input (title)="newTitle($event)"></app-input>
+          <app-input (title)="this.addEditPostForm.get('title').setValue($event)"></app-input>
           <label><strong>Body:</strong></label>
           <textarea class="form-control" cols="1" rows="5" formControlName="body"></textarea>
         </ng-container>
 
         <ng-template #elseBlock1>
           <label><strong>Title:</strong></label>
-          <app-input [value]="(post$ | async)?.title"  (title)="newTitle($event)"></app-input>
+          <app-input (title)="this.addEditPostForm.get('title').setValue($event)" [value]="(post$ | async)?.body"></app-input>
           <label><strong>Body:</strong></label>
-          <!--<textarea class="form-control" cols="1" rows="5" formControlName="body" [ngModel]="(post$ | async)?.body"></textarea>-->
-          <textarea class="form-control" cols="1" rows="5" formControlName="body">{{(post$ | async)?.body}}</textarea>
+          <textarea class="form-control" cols="1" rows="5" [value]="(post$ | async)?.body" formControlName="body"></textarea>
         </ng-template>
 
       </div>
     </div>
-
-    <app-button *ngIf="isAdd; else elseBlock2"
-      title="Add"
-      [disabled]="addEditPostForm.valid"
+    {{ addEditPostForm.valid | json }}
+    <app-button
+      [title]="(isAdd) ? 'Add' : 'Update'"
+      [disabled]="!addEditPostForm.valid"
       (titleChosen)="buttonClicked($event, addEditPostForm)"
     ></app-button>
-
-    <ng-template #elseBlock2>
-      <app-button
-        [disabled]="addEditPostForm.valid"
-        title="Update"
-        (titleChosen)="buttonClicked($event, addEditPostForm)"
-      ></app-button>
-    </ng-template>
 
   </form>
 </div>

@@ -1,8 +1,8 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { PostService } from '../../shared/services/post.service';
-import { IPost } from '../../shared/models/post.model';
+import { PostService } from '../../services/post.service';
+import { IPost } from '../../../shared/models/post.model';
 
 import { Observable } from 'rxjs';
 

@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
-import {IPost} from '../../shared/models/post.model';
+import {IPost} from '../../../shared/models/post.model';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,

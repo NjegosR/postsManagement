@@ -6,21 +6,8 @@
         <div class="col">
           <div class="row box">
             <div class="col">
-              <h1>User Details</h1>
-                <p>
-                  <strong>Name:</strong> {{(user$ | async)?.name}}
-                </p>
-                <p>
-                  <strong>Username:</strong> {{(user$ | async)?.username }}
-                </p>
-                <p>
-                  <strong>Email:</strong> {{(user$ | async)?.email}}
-                </p>
-                <p>
-                  <strong>City:</strong> {{(user$ | async)?.address.city}}
-                </p>
+              <app-user-detail [user]="user$ | async"></app-user-detail>
             </div>
-
           </div>
           <div class="row box">
             <div class="col">
@@ -30,7 +17,6 @@
               <p #p>
                 <strong>Body:</strong> {{post?.body}} </p>
             </div>
-
           </div>
         </div>
         <div class="col">
@@ -38,8 +24,7 @@
         </div>
         </div>
       </div>
-      <!--<button  class="btn btn-lg btn-outline-primary mt-md-3 float-right" (click)="editPost()">Edit Post</button>
-      <button class="btn btn-lg btn-outline-primary mt-md-3 mr-md-3 float-right" (click)="navigate()">Add Post</button>-->
+
       <app-button
         title="Edit Post"
         (titleChosen)="buttonClicked($event)"

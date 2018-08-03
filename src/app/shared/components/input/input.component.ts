@@ -8,6 +8,5 @@ import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@
 })
 export class InputComponent {
   @Input() value: string;
-
   @Output() title = new EventEmitter<string>();
 }

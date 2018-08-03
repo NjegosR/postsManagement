@@ -3,9 +3,10 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Observable, Subscription} from 'rxjs';
 
-import {PostService} from '../../shared/services/post.service';
-import {AlertService} from '../../shared/services/alert.service';
-import {IPost} from '../../shared/models/post.model';
+
+import {AlertService} from '../../../shared/services/alert.service';
+import {IPost} from '../../../shared/models/post.model';
+import {PostService} from '../../services/post.service';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
@@ -16,8 +17,7 @@ import {IPost} from '../../shared/models/post.model';
 export class AddEditPostComponent implements OnInit, OnDestroy {
   addEditPostForm: FormGroup;
   post$: Observable<IPost>;
-  isAdd: boolean;
-  url: Observable<any[]>;
+  isAdd = true;
   postID: number;
   currentTitle: string;
   sub: Subscription;
@@ -29,16 +29,14 @@ export class AddEditPostComponent implements OnInit, OnDestroy {
     private alert: AlertService,
     private activatedRoute: ActivatedRoute
   ) {
-    this.url = this.activatedRoute.url;
-    this.url.forEach(item => {
-      if (item[1].path === 'add') {
-        this.isAdd = true;
-      } else {
-        this.isAdd = false;
-        this.postID = item[2].path;
-        this.post$ = this.postService.getPostById(this.postID);
-      }
-    });
+
+    const path = this.activatedRoute.snapshot.routeConfig.path;
+
+    if (path === 'posts/edit/:postID') {
+      this.isAdd = false;
+      this.postID = this.activatedRoute.snapshot.params.postID;
+      this.post$ = this.postService.getPostById(this.postID);
+    }
   }
 
   ngOnInit() {
@@ -77,9 +75,6 @@ export class AddEditPostComponent implements OnInit, OnDestroy {
     } else {
       this.updatePost(form);
     }
-  }
-  newTitle(title) {
-    this.currentTitle = title;
   }
   ngOnDestroy() {
     this.sub.unsubscribe();

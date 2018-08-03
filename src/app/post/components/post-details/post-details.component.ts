@@ -1,14 +1,14 @@
 import {ChangeDetectionStrategy, Component, OnInit, OnDestroy} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 
-import {IPost} from '../../shared/models/post.model';
-import {PostService} from '../../shared/services/post.service';
-import {Comment} from '../../shared/models/comment.model';
-import {User} from '../../shared/models/user.model';
-import {UserService} from '../../shared/services/user.service';
-import {CommentsService} from '../../shared/services/comments.service';
+import {IPost} from '../../../shared/models/post.model';
+import {PostService} from '../../services/post.service';
+import {Comment} from '../../../shared/models/comment.model';
+import {User} from '../../../shared/models/user.model';
+import {UserService} from '../../../shared/services/user.service';
+import {CommentsService} from '../../../shared/services/comments.service';
 
-import {Observable} from 'rxjs';
+import {Observable, Subscription} from 'rxjs';
 
 
 
@@ -25,6 +25,7 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
   user$: Observable<User>;
   comments$: Observable<Comment[]>;
   post: IPost;
+  sub: Subscription;
 
   constructor(
     private router: Router,
@@ -37,7 +38,7 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.postID = this.activatedRouter.snapshot.params['id'];
-    this.postService.getPostById(this.postID)
+    this.sub = this.postService.getPostById(this.postID)
       .subscribe(result => {
         this.post = result;
         this.userID =  this.post.userId;
@@ -47,14 +48,16 @@ export class PostDetailsComponent implements OnInit, OnDestroy {
 
   }
   buttonClicked(titleChosen: string) {
+    /*console.log(titleChosen);
     const titleArray = titleChosen.split(' ');
     let title = titleArray[0].toLocaleLowerCase();
+    console.log(title);
     if (title === 'edit') {
       title += `/${this.postID}`;
-    }
-    this.router.navigateByUrl(`posts/${title}`);
+    }*/
+    this.router.navigateByUrl(`posts/edit/${this.postID}`);
   }
   ngOnDestroy() {
+    this.sub.unsubscribe();
   }
-
 }

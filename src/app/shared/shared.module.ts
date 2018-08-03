@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -10,6 +9,7 @@ import { CommentComponent } from './components/comment/comment.component';
 import { ButtonComponent } from './components/button/button.component';
 import {TimeAgoPipe} from './pipes/time-ago.pipe';
 import { InputComponent } from './components/input/input.component';
+import { UserDetailComponent } from './components/user-detail/user-detail.component';
 
 @NgModule({
   imports: [
@@ -22,7 +22,8 @@ import { InputComponent } from './components/input/input.component';
     CommentComponent,
     ButtonComponent,
     TimeAgoPipe,
-    InputComponent
+    InputComponent,
+    UserDetailComponent
   ],
   exports: [
     HeaderComponent,
@@ -30,10 +31,10 @@ import { InputComponent } from './components/input/input.component';
     LatestCommentsComponent,
     CommentComponent,
     ButtonComponent,
-    InputComponent
+    InputComponent,
+    UserDetailComponent
   ],
   providers: [
-    NgbActiveModal,
     AlertService
   ]
 })
