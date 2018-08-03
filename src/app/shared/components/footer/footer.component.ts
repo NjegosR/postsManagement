@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -10,4 +10,6 @@ export class FooterComponent {
 
   @Input() title: string;
   @Input() subtitle: string;
+  @Input() albums: string;
+  @Output() path = new EventEmitter<boolean>();
 }

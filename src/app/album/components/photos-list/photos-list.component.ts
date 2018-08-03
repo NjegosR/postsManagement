@@ -1,6 +1,7 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Observable} from 'rxjs';
+
 import {IPhoto} from '../../../shared/models/photo.model';
 import {PhotoService} from '../../services/photo.service';
 

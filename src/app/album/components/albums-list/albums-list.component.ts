@@ -1,7 +1,10 @@
 import {ChangeDetectionStrategy, Component, OnInit} from '@angular/core';
 import {AlbumService} from '../../services/album.service';
-import {Observable} from 'rxjs';
+
 import {IAlbum} from '../../../shared/models/album.model';
+
+import {Observable} from 'rxjs';
+
 
 @Component({
   changeDetection: ChangeDetectionStrategy.Default,
