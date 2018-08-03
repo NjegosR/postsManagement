@@ -11,11 +11,7 @@
           </div>
           <div class="row box">
             <div class="col">
-              <h1>Post Details</h1>
-              <p>
-                <strong>Title:</strong> {{post?.title}} </p>
-              <p #p>
-                <strong>Body:</strong> {{post?.body}} </p>
+              <app-show-post-details [post]="post"></app-show-post-details>
             </div>
           </div>
         </div>

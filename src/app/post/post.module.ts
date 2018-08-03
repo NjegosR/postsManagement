@@ -9,6 +9,7 @@ import {SharedModule} from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import {AppRoutingModule} from '../app-routing.module';
 import {UserDetailComponent} from './components/user-detail/user-detail.component';
+import { ShowPostDetailsComponent } from './components/show-post-details/show-post-details.component';
 
 
 
@@ -24,14 +25,16 @@ import {UserDetailComponent} from './components/user-detail/user-detail.componen
     PostDetailsComponent,
     PostListComponent,
     PostListItemComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    ShowPostDetailsComponent
   ],
   exports: [
     AddEditPostComponent,
     PostDetailsComponent,
     PostListComponent,
     PostListItemComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    ShowPostDetailsComponent
   ],
   providers: [
     AlertService
